@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Tomato Tweet Machine
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The core feature is a web-based UI that helps users stay on-message when crafting tweets about tomatoes. Users type in a text box, and when they hit the "tweetify" button, some processing happens and a jazzed-up tweet appears in a second text box. The user then typically copies the text into Twitter and gets amazing engagement numbers.
 
-## Available Scripts
+## Requirements
 
-In the project directory, you can run:
+- [x] It should not be possible to type in the output text box.
+- [x] It should be possible to see an entire tweet in both text boxes without having to manually resize it.
+- [x] The "tweetify" button should be removed. Instead, the output text should update as the user is typing.
+- [x] There should be a randomised delay between input and output, so the system would appear to be "doing more" (client's words). The delay time should vary between 500 ms and 2500 ms.
+- [x] When the user's input text is already on-message (no hashtag is added), its length should still be truncated to fit in a tweet. Make sure not to cut off the hashtag!
+- [x] The Association is trying to expand its international reach; The tweetifier should accept #Tomate (French), #Pomodoro (Italian), #Tomaat (Dutch) and #Pomidor (Polish) as additional valid hashtags - and not add #Tomato after them.
+- [x] 280-character, multilingual, and URL-containing tweets should be supported as they are on Twitter.com. (NOTE: The maximum length of a tweet changed in 2017, but the PO only got the budget to adapt their system recently.)
+- [x] In addition to the aforementioned international hashtags being accepted, the client would also like us to detect the language of a tweet and add the most appropriate available hashtag.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React
+- Styled Components
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Despite the codesandbox example provided being in pure JavaScript, I decided to build my solution using React. I wanted to showcase my skills but I also believe that we should be building reusable components as much as we can which allows us to:
 
-### `npm test`
+- Keep designs consistent
+- Speed up development because we don't need to re-invent the wheel
+- Can build upon and create a design styleguide/component library that can be consumed across the whole application
+- Easier to maintain and extend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Of course in the real-world, there are several factors that would needed to be thought of before going big bang with replatforming legacy code.
 
-### `npm run build`
+## Design
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Seeing as the task involved tomatoes I tried to keep on theme by going with a pinky/red tone throughout the design. I used https://webaim.org/resources/contrastchecker/ to make sure that the colours I used were A11y friendly.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+It is responsive and keyboard friendly as native HTML elements are being used.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Multi-Lingual
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I used a JavaScript library called Franc https://github.com/wooorm/franc to help with language detection so that I can add the respective hashtag. Its a very light library though I would have preferred to use Google Cloud Translate API which also has language detection.
