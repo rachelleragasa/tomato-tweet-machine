@@ -2,7 +2,7 @@
 
 The core feature is a web-based UI that helps users stay on-message when crafting tweets about tomatoes. Users type in a text box, and when they hit the "tweetify" button, some processing happens and a jazzed-up tweet appears in a second text box. The user then typically copies the text into Twitter and gets amazing engagement numbers.
 
-[Demo](tomato-tweet-machine.netlify.app)
+[Demo](https://tomato-tweet-machine.netlify.app)
 
 ## Requirements
 
