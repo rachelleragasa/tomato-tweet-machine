@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
 		--red: #FF6666;
 		--offWhite: #f7f1f1;
 		--white: #FFF;
+		--black: #000;
 	}
 
 	body {
@@ -19,11 +20,11 @@ const GlobalStyles = createGlobalStyle`
 		min-height: 100vh;
         width: 100%;
 		padding: 0 10px;
-		color: var(--white);
+		color: var(--black);
 		background-color: var(--offWhite);
 		font-family: 'Quicksand', sans-serif;
 		font-size: 1.125rem;
-		line-height: 1.5rem;
+		line-height: 1.8rem;
 		text-spacing: 1px;
 
 		${above.tabletLarge`
